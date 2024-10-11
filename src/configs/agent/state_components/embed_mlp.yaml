@@ -1,0 +1,12 @@
+model_type: EmbedMLP
+params:
+  categorical_dims:
+    depth: 100
+    cut_node_dist: 32
+  continuous_dims: 10
+  hidden_sizes:
+    - 256
+    - 128
+  output_size: 128
+  embedding_dim: 1
+  norm_layer: null

@@ -1,0 +1,1 @@
+{"problem_type": "tsp", "cut_type": "subtour", "env_name": "BaseCutEnv", "seed": 123}

@@ -1,0 +1,186 @@
+This directory contains the Makefile and source code for five programs
+to be used in the DIMACS TSP Challenge.
+
+greedy:	Given an instance in selected* TSPLIB formats, uses the greedy
+	or multi-fragment algorithm to construct a tour and reports the length
+	of that tour.  Usage: "greedy instance [N]" where N is the number of
+	iterations to be run.  The default is N = 1.  Using N > 1 simply
+	repeats the identical computation N times, but is useful for obtaining
+	higher precision measurements of running times for smaller instances
+	on fast machines.  This code is to be used for benchmarking machine
+	speeds.
+
+length: Given an instance in TSPLIB format and a file consisting of
+	a permutation of the integers from 1 to N, where N is the number
+	of cities, computes the length of the tour corresponding to
+	that permutation.  Usage: "length instance permutation".
+	Useful for verifying that your code is correctly implementing
+	the TSPLIB distance metrics.
+
+portgen: Constructs two dimensional instances in TSPLIB format consisting
+	of integer-coordinate points uniformly distributed in the
+	10^6 X 10^6 square.   Usage: "portgen number-of-cities seed" where
+	the seed is an integer.
+
+portcgen: Constructs two dimensional instances in TSPLIB format consisting
+	of integer-coordinate points located in clusters that are
+	uniformly distributed in the 10^6 X 10^6 square.   Usage:
+	"portcgen number-of-cities seed" where the seed is an integer.
+
+portmgen: Constructs distance matrices where each entry is chosen
+	independently and uniformly from the integers in (0,10^6].
+	Usage:"portmgen number-of-cities seed" where the seed is an integer.
+
+* TSPLIB formats supported: EUC_2D, CEIL_2D, UPPER_DIAG_ROW.
+
+For further details on codes, look at the preambles to the source code files.
+If you have trouble compiling the codes or getting them to run properly,
+contact dsj@research.att.com.
+
+To benchmark your machine, run the following commands:
+
+time greedy E1k.0 1000 
+time greedy E3k.0 316 
+time greedy E10k.0 100 
+time greedy E31k.0 32 
+time greedy E100k.0 10 
+time greedy E316k.0 3 
+time greedy E1M.0 1 
+time greedy E3M.0 1 
+time greedy E10M.0 1
+
+and report the user times obtained.  If possible, report the average
+of at least two runs.  Note that precision greater than two decimal
+places is relatively meaningless in this context.   Sample results for
+5 machines are available from the download page.
+
+To generate the random instance testbed for the TSP Challenge, run the
+following commands.  To verify that the generators are working correctly,
+download the sample random instance tarfile from the TSP Challenge
+download page (http://www.research.att.com/~dsj/chtsp/download.html),
+which contains the correct versions of E1k.1, C1k.1, and M1k.1.
+As a partial check on the other instances, verify that the greedy
+code reports the same tour length as is given in the table of
+greedy results available from the download page.  As a further partial
+check, we conclude this file with a list of the file sizes for the
+instances.  This list can also guide you as to whether you want to
+generate the largest instances of each type, given the number of
+megabytes they require.  Note that the largest instances in the
+testbed, E10M.0 and M10k.0, requires 216 and 344 megabytes, respectively.
+
+portgen 1000 1000 > E1k.0
+portgen 1000 10001 > E1k.1
+portgen 1000 10002 > E1k.2
+portgen 1000 10003 > E1k.3
+portgen 1000 10004 > E1k.4
+portgen 1000 10005 > E1k.5
+portgen 1000 10006 > E1k.6
+portgen 1000 10007 > E1k.7
+portgen 1000 10008 > E1k.8
+portgen 1000 10009 > E1k.9
+portgen 3162 3162 > E3k.0
+portgen 3162 31621 > E3k.1
+portgen 3162 31622 > E3k.2
+portgen 3162 31623 > E3k.3
+portgen 3162 31624 > E3k.4
+portgen 10000 10000 > E10k.0
+portgen 10000 100001 > E10k.1
+portgen 10000 100002 > E10k.2
+portgen 31623 31623 > E31k.0
+portgen 31623 316231 > E31k.1
+portgen 100000 100000 > E100k.0
+portgen 100000 1000001 > E100k.1
+portgen 316228 316228 > E316k.0
+portgen 1000000 1000000 > E1M.0
+portgen 3162278 3162278 > E3M.0
+portgen 10000000 10000000 > E10M.0
+portcgen 1000 1000 > C1k.0
+portcgen 1000 10001 > C1k.1
+portcgen 1000 10002 > C1k.2
+portcgen 1000 10003 > C1k.3
+portcgen 1000 10004 > C1k.4
+portcgen 1000 10005 > C1k.5
+portcgen 1000 10006 > C1k.6
+portcgen 1000 10007 > C1k.7
+portcgen 1000 10008 > C1k.8
+portcgen 1000 10009 > C1k.9
+portcgen 3162 3162 > C3k.0
+portcgen 3162 31621 > C3k.1
+portcgen 3162 31622 > C3k.2
+portcgen 3162 31623 > C3k.3
+portcgen 3162 31624 > C3k.4
+portcgen 10000 10000 > C10k.0
+portcgen 10000 100001 > C10k.1
+portcgen 10000 100002 > C10k.2
+portcgen 31623 31623 > C31k.0
+portcgen 31623 316231 > C31k.1
+portcgen 100000 100000 > C100k.0
+portcgen 100000 1000001 > C100k.1
+portcgen 316228 316228 > C316k.0
+portmgen 1000 1000 > M1k.0
+portmgen 1000 10001 > M1k.1
+portmgen 1000 10002 > M1k.2
+portmgen 1000 10003 > M1k.3
+portmgen 3162 3162 > M3k.0
+portmgen 3162 31621 > M3k.1
+portmgen 10000 10000 > M10k.0
+
+Instances and sizes in bytes:
+
+  E1k.0      17798
+  E1k.1      17807
+  E1k.2      17809
+  E1k.3      17808
+  E1k.4      17819
+  E1k.5      17800
+  E1k.6      17815
+  E1k.7      17821
+  E1k.8      17814
+  E1k.9      17802
+  E3k.0      58356
+  E3k.1      58381
+  E3k.2      58335
+  E3k.3      58396
+  E3k.4      58462
+ E10k.0     186767
+ E10k.1     186794
+ E10k.2     186811
+ E31k.0     614412
+ E31k.1     614549
+E100k.0    1967050
+E100k.1    1966665
+E316k.0    6459618
+  E1M.0   20667771
+  E3M.0   67756482
+ E10M.0  216667508
+  C1k.0      17880
+  C1k.1      17715
+  C1k.2      17811
+  C1k.3      17788
+  C1k.4      17882
+  C1k.5      17939
+  C1k.6      17800
+  C1k.7      17959
+  C1k.8      17609
+  C1k.9      17874
+  C3k.0      58594
+  C3k.1      58607
+  C3k.2      58648
+  C3k.3      58579
+  C3k.4      58518
+ C10k.0     186916
+ C10k.1     187689
+ C10k.2     187291
+ C31k.0     614549
+ C31k.1     613853
+C100k.0    1969230
+C100k.1    1965225
+C316k.0    6459637
+  M1k.0    3442862
+  M1k.1    3443233
+  M1k.2    3443555
+  M1k.3    3443494
+  M3k.0   34433972
+  M3k.1   34434379
+ M10k.0  344423841
+

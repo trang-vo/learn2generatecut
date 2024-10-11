@@ -1,0 +1,152 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_Read_DataCheck                          1
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Strategy_Search                     1
+CPXPARAM_MIP_Interval                            1
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_MIP_Limits_CutsFactor                   0
+Lazy constraint(s) or lazy constraint/branch callback is present.
+    Disabling dual reductions (CPX_PARAM_REDUCE) in presolve.
+    Disabling non-linear reductions (CPX_PARAM_PRELINEAR) in presolve.
+    Disabling presolve reductions that prevent crushing forms.
+Dual steepest-edge pricing selected.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: traditional branch-and-cut.
+Parallel mode: none, using 1 thread.
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =         35034.000000
+Iteration:   172   Dual objective     =       4035390.000000
+Root relaxation solution time = 0.01 sec. (6.42 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap         Variable B NodeID Parent  Depth
+
+      0     0  4642423.5000    26                4642423.5000      284         
+      0     0  4872786.7500    26                   User: 125      350         
+      0     0  5148273.7500    26                    User: 45      376         
+      0     0  5155412.2500    26                    User: 72      397         
+      0     0  5161656.2500    26                   User: 101      410         
+      0     0  5167283.2500    26                     User: 8      423         
+      0     2  5167283.2500    54                5167283.2500      423                                 0             0
+Elapsed time = 4.32 sec. (1778.65 ticks, tree = 0.01 MB, solutions = 0)
+Cannot find any cut at node 1
+      1     3  5171276.2500    44                5167283.2500      424                 x.86.108 D      1      0      1
+Cannot find any cut at node 2
+      2     4  5176788.7500    54                5171276.2500      427                 x.86.108 U      2      0      1
+Cannot find any cut at node 3
+      3     5  5177632.2500    38                5171276.2500      430                x.154.189 D      3      1      2
+Cannot find any cut at node 4
+      4     6  5177864.2500    38                5176788.7500      432                x.154.189 U      4      1      2
+Cannot find any cut at node 5
+      5     7  5178989.2500    38                5176788.7500      435                x.124.150 D      5      3      3
+Cannot find any cut at node 6
+      6     8  5187814.2500    38                5176788.7500      445                x.124.150 U      6      3      3
+Cannot find any cut at node 7
+      7     9  5192063.7500    40                5176788.7500      458                 x.70.105 D      7      5      4
+Cannot find any cut at node 8
+      8    10  5180107.7500    42                5176788.7500      460                 x.70.105 U      8      5      4
+Cannot find any cut at node 9
+      9    11  5184608.2500    42                5176788.7500      465                x.157.165 D      9      8      5
+Cut score: 574.0000, branch score: 1001.0000
+     10    12  5183078.2500    60                5176788.7500      468                x.157.165 U     10      8      5
+                                                      User: 3                  
+Elapsed time = 13.11 sec. (2734.48 ticks, tree = 0.10 MB, solutions = 0)
+Cut score: 287.0000, branch score: 341.5833
+     11    13  5183696.0000    58                5176788.7500      473                 x.96.170 D     11     10      6
+Cut score: 287.0000, branch score: 287.0000
+At node 12, add 1 user cuts
+Cannot find any cut at node 12
+     12    14  5190158.5000    22                5176788.7500      478                 x.96.170 N     12     10      6
+                                                      User: 1                  
+Cannot find any cut at node 13
+     13    15  5183983.0000    44                5176788.7500      479                 x.14.110 D     13     11      7
+Cannot find any cut at node 14
+     14    16  5184345.0000    40                5176788.7500      481                 x.14.110 U     14     11      7
+Cannot find any cut at node 15
+     15    17  5186954.0000    34                5176788.7500      489                 x.13.177 D     15     13      8
+Cannot find any cut at node 16
+     16    18  5186754.5000    50                5176788.7500      494                 x.13.177 U     16     13      8
+Cannot find any cut at node 17
+     17    19  5187288.0000    36                5176788.7500      496                 x.60.103 D     17     16      9
+Cannot find any cut at node 18
+     18    20  5194867.0000    28                5176788.7500      502                 x.60.103 U     18     16      9
+Cut score: 1104.0000, branch score: 1473.5833
+     19    21  5187707.5000    36                5176788.7500      504                  x.49.51 D     19     17     10
+Cut score: 205.5000, branch score: 812.7500
+     20    22  5196802.0000    38                5176788.7500      510                  x.49.51 U     20     17     10
+                                                      User: 4                  
+Elapsed time = 30.30 sec. (3477.69 ticks, tree = 0.20 MB, solutions = 0)
+Cut score: 113.5000, branch score: 130.5833
+     21    23  5188698.0000    36                5176788.7500      514                x.138.140 D     21     19     11
+Cut score: 4561.7500, branch score: 3638.2500
+At node 22, add 71 user cuts
+Cannot find any cut at node 22
+     22    24  5197467.7500    47                5176788.7500      523                x.138.140 N     22     19     11
+                                                     User: 71                  
+Cannot find any cut at node 23
+     23    25  5189054.0000    14                5176788.7500      526                x.125.177 D     23     21     12
+Cut score: 765.0000, branch score: 729.3333
+At node 24, add 1 user cuts
+Cannot find any cut at node 24
+     24    26  5190169.0000    24                5176788.7500      531                x.125.177 N     24     21     12
+                                                      User: 1                  
+Cannot find any cut at node 25
+     25    27  5193232.5000    28                5176788.7500      538                  x.62.65 D     25     23     13
+Cannot find any cut at node 26
+     26    28  5189093.5000    12                5176788.7500      539                  x.62.65 U     26     23     13
+Cannot find any cut at node 27
+     27    29  5189447.0000    14                5176788.7500      540                 x.54.150 D     27     26     14
+Cannot find any cut at node 28
+     28    30  5202309.0000    12                5176788.7500      553                 x.54.150 U     28     26     14
+Cannot find any cut at node 29
+     29    31  5189881.5000    12                5176788.7500      554                 x.70.150 D     29     27     15
+Cannot find any cut at node 30
+     30    32  5190982.5000    12                5176788.7500      557                 x.70.150 U     30     27     15
+                                                      User: 7                  
+Elapsed time = 46.03 sec. (4081.41 ticks, tree = 0.30 MB, solutions = 0)
+Cut score: 504.5000, branch score: 2948.8333
+     31    33  5190944.5000    12                5176788.7500      558                x.135.150 D     31     29     16
+Cannot find any cut at node 32
+     32    34  5197753.5000    12                5176788.7500      566                x.135.150 U     32     29     16
+Cut score: 10567.7500, branch score: 986.7500
+At node 33, add 148 user cuts
+Cannot find any cut at node 33
+     33    35  5216682.7500    42                5176788.7500      600                  x.36.40 N     33     31     17
+                                                    User: 148                  
+Cannot find any cut at node 34
+     34    36  5191449.0000    14                5176788.7500      602                  x.36.40 U     34     31     17
+Cannot find any cut at node 35
+     35    37  5191708.5000    12                5176788.7500      603                 x.79.150 D     35     34     18
+Cannot find any cut at node 36
+     36    38  5205230.5000    12                5176788.7500      615                 x.79.150 U     36     34     18
+Cannot find any cut at node 37
+     37    39  5193164.5000    14                5176788.7500      617                  x.54.70 D     37     35     19
+Cannot find any cut at node 38
+     38    40  5197199.0000    14                5176788.7500      622                  x.54.70 U     38     35     19
+Cannot find any cut at node 39
+     39    41  5200111.0000    14                5176788.7500      628                 x.70.124 D     39     37     20
+Cannot find any cut at node 40
+     40    42  5193508.0000    14                5176788.7500      629                 x.70.124 U     40     37     20
+                                                      User: 3                  
+Elapsed time = 67.13 sec. (5193.90 ticks, tree = 0.41 MB, solutions = 0)
+Cannot find any cut at node 41
+     41    43  5194534.0000     6                5176788.7500      635                x.103.135 D     41     40     21
+Cannot find any cut at node 42
+     42    44  5205006.5000    12                5176788.7500      642                x.103.135 U     42     40     21
+*    43    23      integral     0  5194658.0000  5176788.7500      643    0.34%
+Found incumbent of value 5194658.000000 after 68.46 sec. (5250.96 ticks)
+     43    23  5194658.0000     0  5194658.0000  5176788.7500      643    0.34%       x.131.145 D     43     41     22
+     44    22        cutoff        5194658.0000  5176788.7500      644    0.34%       x.131.145 U     44     41     22
+
+User cuts applied:  616
+
+Root node processing (before b&c):
+  Real time             =    4.32 sec. (1778.69 ticks)
+Sequential b&c:
+  Real time             =   64.16 sec. (3491.00 ticks)
+                          ------------
+Total (root+branch&cut) =   68.48 sec. (5269.69 ticks)

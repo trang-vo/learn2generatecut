@@ -1,0 +1,52 @@
+state_components:
+    statistic: configs/agent/state_components/statistic_mlp.yaml
+    solution: configs/agent/state_components/solution_graphormer.yaml
+#    problem: configs/agent/state_components/problem_gine.yaml
+
+policy_net:
+    model_type: NoisyNet
+    hidden_sizes:
+        - 256
+        - 128
+
+action_shape: 2
+device: cuda
+
+optimizer:
+    lr: 0.0001
+    weight_decay: 0.0001
+
+policy:
+    name: RainbowPolicyGPU
+    discount_factor: 1
+    estimation_step: 3
+    target_update_freq: 500
+    v_min: -20
+    v_max: 0
+    use_atoms: true
+    num_atoms: 51
+
+train:
+    epsilon_greedy:
+        decay_strategy: exp
+        epsilon_init: 1
+        epsilon_final: 0.01
+        epsilon_decay: 100000
+    buffer_replay:
+        type: prioritized
+        alpha: 0.6
+        beta: 0.4
+        beta_final: 1
+        buffer_size: 10000
+        beta_annealing: 100000
+        beta_annealing_strategy: linear
+    max_epoch: 500
+    reward_threshold: 0
+    step_per_epoch: 2000
+    step_per_collect: 16
+    update_per_step: 1
+    episode_per_test: 1
+    batch_size: 256
+    n_cpu: 2
+    pretrain_path: null
+    initial_buffer: null # null or path to buffer

@@ -1,0 +1,31 @@
+space_config:
+  instance_size: 200
+  ori_edge_dim: 4
+  ori_nEdges: 3000
+  ori_node_dim: 1
+  statistic_dim: 12
+  sup_edge_dim: 1
+  sup_nEdges: 500
+  sup_nNodes: 200
+  sup_node_dim: 1
+mdp_type: original
+state_extractor_class: SubtourStateExtractor
+state_components:
+- solution
+- statistic
+- problem
+data_folder: ../data/tsp_instances/200
+k_nearest_neighbors: 10
+episode_config:
+  limited_one_action: 2000
+  reward_time_limit: -1000
+  reward_type: time
+  terminal_gap: 0.01
+  time_limit: 3000
+initial_start_distance: 0.05
+final_start_distance: 1
+start_distance_fraction: 0.5
+total_train_steps: 1000000
+random_path: True
+user_callback_type: EnvUserCallback
+initial_probability: 1

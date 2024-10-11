@@ -1,0 +1,8 @@
+model_type: GINEGraphExtractor
+params:
+  node_dim: 1
+  edge_dim: 4
+  hidden_size: 128
+  num_layers: 1
+  n_clusters: 2
+  dropout: 0

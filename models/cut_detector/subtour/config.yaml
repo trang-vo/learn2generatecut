@@ -1,0 +1,5 @@
+node_dim: 1
+edge_dim: 1
+hidden_size: 64
+output_size: 2
+dropout: 0

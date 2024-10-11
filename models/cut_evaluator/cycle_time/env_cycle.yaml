@@ -1,0 +1,31 @@
+space_config:
+  instance_size: 100
+  ori_nEdges: 990 # = the number of edges in graph * 2 (times 2 because of the graph representation in pytorch-geometric)
+  ori_node_dim: 1
+  ori_edge_dim: 4
+  statistic_dim: 12
+  sup_nNodes: 2000
+  sup_nEdges: 3960 # = the number of edges * 4 * 2 (times 4 because of separation problem and times 2 because of the graph representation in pytorch-geometric)
+  sup_node_dim: 1
+  sup_edge_dim: 1
+mdp_type: simplified
+state_extractor_class: GraphormerCycleStateExtractor
+state_components:
+  - solution
+  - statistic
+  - problem
+data_folder: ../data/maxcut_instances/100_modifed
+k_nearest_neighbors: 10
+episode_config:
+  limited_one_action: 2000
+  time_limit: 3000
+  reward_time_limit: -1000
+  terminal_gap: 0.01
+  reward_type: time_with_penalty
+initial_start_distance: 1
+final_start_distance: 1
+start_distance_fraction: 0.5
+total_train_steps: 1000000
+random_path: True
+user_callback_type: EnvUserCallback
+initial_probability: 1

@@ -1,0 +1,6 @@
+model_type: MLP
+params:
+  input_size: 12
+  hidden_sizes:
+    - 256
+  output_size: 256

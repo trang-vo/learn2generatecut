@@ -1,0 +1,6 @@
+model_type: MLPOneLayer
+params:
+  input_size: 12
+  hidden_sizes:
+    - 64
+  output_size: 64

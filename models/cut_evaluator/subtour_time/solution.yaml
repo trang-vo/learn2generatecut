@@ -1,0 +1,37 @@
+model_type: GraphormerExtractor
+params:
+  num_node_features: 1
+  num_edge_features: 1
+#  the number of distinct values of node features
+  num_atoms: 100
+# the number of distinct values of in-degree
+  num_in_degree: 100
+# the number of distinct values of out-degree
+  num_out_degree: 100
+#  the number of distinct values of edge features
+  num_edges: 100
+#  the number of distinct values of spatial features (the length of the shortest paths)
+  num_spatial: 10
+  num_edge_dis: 100
+# multi_hop or ???
+  edge_type: null
+  multi_hop_max_dist: null
+  num_encoder_layers: 3
+  embedding_dim: 256
+  ffn_embedding_dim: 256
+  num_attention_heads: 16
+  dropout: 0.1
+  attention_dropout: 0.1
+  activation_dropout: 0.1
+  layerdrop: 0.0
+  encoder_normalize_before: false
+  pre_layernorm: false
+  apply_graphormer_init: false
+  activation_fn: "gelu"
+  embed_scale: null
+  freeze_embeddings: false
+  n_trans_layers_to_freeze: 0
+  export: false
+  traceable: false
+  q_noise: 0.0
+  qn_block_size: 8

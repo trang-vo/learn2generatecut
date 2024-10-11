@@ -1,0 +1,49 @@
+state_components:
+    statistic: statistic.yaml
+    solution: solution.yaml
+    problem: problem.yaml
+
+policy_net:
+    model_type: StandardNet
+    hidden_sizes:
+        - 64
+        - 64
+
+action_shape: 2
+device: cuda
+
+optimizer:
+    lr: 0.0001
+    weight_decay: 0.0001
+
+policy:
+    name: DQNPolicyGPU
+    discount_factor: 1
+    estimation_step: 3
+    target_update_freq: 500
+    use_atoms: false
+
+train:
+    epsilon_greedy:
+        decay_strategy: exp
+        epsilon_init: 1
+        epsilon_final: 0.01
+        epsilon_decay: 25000
+    buffer_replay:
+        type: prioritized
+        alpha: 0.6
+        beta: 0.4
+        beta_final: 1
+        buffer_size: 100000
+        beta_annealing: 100000
+        beta_annealing_strategy: linear
+    max_epoch: 500
+    reward_threshold: 0
+    step_per_epoch: 2000
+    step_per_collect: 16
+    update_per_step: 1
+    episode_per_test: 1
+    batch_size: 128
+    n_cpu: 16
+    pretrain_path: null
+    initial_buffer: null # null or path to buffer
